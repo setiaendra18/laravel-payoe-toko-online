@@ -10,7 +10,7 @@ class HomeController extends Controller
     public function index()
     {
         $produk = Produk::latest()->paginate(5);
-        return view('homepage', compact('produk'))
+        return view('pages.customer.home', compact('produk'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
         
     }
